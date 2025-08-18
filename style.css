@@ -1,0 +1,210 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent; /* your original scheme */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* original color */
+}
+
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: white; /* original color */
+  transition: opacity 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  opacity: 0.7;
+}
+
+.search {
+  display: flex;
+  gap: 5px;
+}
+
+.search input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hamburger icon (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white; /* match original text color */
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 60vh;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: fixed;          /* stay fixed across scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fill screen */
+  z-index: -1;              /* behind all other content */
+}
+
+.hero .left h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  max-width: 400px;
+  color: white; /* original */
+}
+
+.description-box {
+  padding: 12px 18px;
+  border-radius: 15px;
+  max-width: 260px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent box like your scheme */
+  color: white; /* original */
+}
+
+/* About Section */
+.about {
+  text-align: center;
+  background-color:transparent;
+  color: white; /* original text color */
+  line-height: 30px;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight {
+  color: #ffcc00; /* assuming your original highlight color */
+}
+
+.about .button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: blue;
+  color: rgb(255, 255, 255);       /* original scheme */
+}
+
+/* Mouse follower */
+.mouse-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  z-index: 1000;
+  background: rgba(255,255,255,0.4); /* original light dot style */
+}
+.mobile-menu{
+  display: none;
+}
+#search-icon{
+  display: none;
+}
+
+
+/* Mobile View - hide navbar links and search */
+@media (max-width: 768px) {
+  .navbar nav ul,
+  .search {
+    display: none !important; /* hide menu links AND search bar completely */
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger icon */
+  }
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: rgba(0,0,0,0.9); /* dark background to match your scheme */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white; /* match original menu text */
+}

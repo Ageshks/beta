@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BroYouNeed</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Mouse follower element -->
+    <div class="mouse-follower"></div>
+
+    <header class="navbar">
+      <div class="logo">BROYOUNEED</div>
+
+      <!-- Hamburger menu icon (visible on mobile) -->
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#">Be a Member</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop search bar -->
+      <div class="search" id="search-box">
+        <input type="text" placeholder="Search..."/>
+        <button>Go</button>
+      </div>
+
+      <!-- Mobile search icon -->
+      <div class="search-icon" id="search-icon">🔍</div>
+    </header>
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/bg.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <main class="hero">
+
+      <div class="left">
+        <h1>When you’re lost,<br> your brother’s got your back</h1>
+      </div>
+      <div class="right">
+        <div class="description-box">
+          <p>BroYouNeed is more than a brand. It's a mindset.<br>
+          Here, you're never alone. <br>
+          You've got a brother.</p>
+        </div>
+      </div>
+    </main>
+    <section class="about">
+      <div class="about-container">
+        <p>
+          Welcome to <span class="highlight">BroYouNeed</span><br/>
+          your digital brother, guide, and support system for when life, work, or ideas get overwhelming.
+        </p>
+        <p>
+          We started <span class="highlight">BroYouNeed</span> with one simple belief:
+        </p>
+        <p>
+          <strong>Everyone deserves someone they can count on.</strong>
+        </p>
+        <p>
+          Whether you’re stuck on a big decision, launching a startup, or just need honest advice —
+          we’re here like the brother you never had. No judgment.
+        </p>
+        <p>
+          Just clarity, guidance, and real talk.
+        </p>
+        <a href="#" class="button">MEET MENTORS</a>
+      </div>
+    </section>
+
+
+
+    <script>
+      // Mouse follower
+      const follower = document.querySelector('.mouse-follower');
+      document.addEventListener('mousemove', (e) => {
+        follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+
+      // Mobile navbar toggle
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Search icon (you can replace alert with overlay/modal)
+      const searchIcon = document.getElementById('search-icon');
+      searchIcon.addEventListener('click', () => {
+        alert('Open search modal or expand bar here');
+      });
+    </script>
+</body>
+</html>
