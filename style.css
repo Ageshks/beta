@@ -1,8 +1,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  color: #fff; /* ensures text stays visible over dark video background */
 }
 
+/* Fullscreen video background */
 .bg-video {
   position: fixed;
   top: 0;
@@ -10,9 +12,16 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2; /* push it behind all content */
+  z-index: -2; /* behind everything */
 }
 
+/* Transparent navbar over video */
+.navbar {
+  background: transparent !important;
+  z-index: 10; /* keep nav clickable */
+}
+
+/* Hero section */
 .hero {
   height: 100vh;
   position: relative;
@@ -43,6 +52,7 @@ body {
   line-height: 1.6;
 }
 
+/* About section */
 .about-section {
   position: relative;
   overflow: hidden;
@@ -54,7 +64,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: radial-gradient(circle at top left, #ff9cff, #7b2cff, #000 70%); */
   opacity: 0.7;
   z-index: 0;
 }
@@ -85,3 +94,47 @@ body {
   box-shadow: 0 0 30px rgba(255, 156, 255, 0.9);
   background: #5e22cc;
 }
+
+/* Login card (used on login.html) */
+.login-card {
+  background: rgba(0, 0, 0, 0.7);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card input {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.login-card input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.login-card {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card input {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.login-card input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 15px;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+

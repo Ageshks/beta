@@ -8,85 +8,111 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Background Video -->
   <video autoplay muted loop playsinline class="bg-video">
     <source src="assets/bg.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-white" href="#">BROYOUNEED</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navMenu">
-      <ul class="navbar-nav gap-4">
-        <li class="nav-item"><a class="nav-link text-white" href="#">Be a Mentor</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
-      </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-white" href="#">BROYOUNEED</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Be a Mentor</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+          <!-- Trigger Login Modal -->
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+        </ul>
+      </div>
+      <form class="d-none d-lg-flex ms-auto">
+        <input class="form-control form-control-sm me-2 rounded-pill" type="search" placeholder="Search here">
+        <button class="btn btn-sm btn-primary rounded-pill" type="submit">🔍</button>
+      </form>
     </div>
-    <form class="d-none d-lg-flex ms-auto">
-      <input class="form-control form-control-sm me-2 rounded-pill" type="search" placeholder="Search here">
-      <button class="btn btn-sm btn-primary rounded-pill" type="submit">🔍</button>
-    </form>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO SECTION -->
-<section class="hero d-flex align-items-center">
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <!-- LEFT TEXT IN CIRCLE -->
-      <div class="col-md-6 text-white d-flex justify-content-center align-items-center">
-        <div class="circle d-flex justify-content-center align-items-center text-center p-4">
-          <h2 class="fw-bold">When you're lost,<br>your brother's got your back</h2>
+  <!-- HERO SECTION -->
+  <section class="hero d-flex align-items-center">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- LEFT TEXT IN CIRCLE -->
+        <div class="col-md-6 text-white d-flex justify-content-center align-items-center">
+          <div class="circle d-flex justify-content-center align-items-center text-center p-4">
+            <h2 class="fw-bold">When you're lost,<br>your brother's got your back</h2>
+          </div>
+        </div>
+        <!-- RIGHT BOX -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <div class="info-box text-white p-4">
+            <p><strong>BroYouNeed</strong> is more than a brand, it's a mindset.<br>
+            Here, you're never alone.<br>
+            You've got a brother.</p>
+          </div>
         </div>
       </div>
-      <!-- RIGHT BOX -->
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <div class="info-box text-white p-4">
-          <p><strong>BroYouNeed</strong> is more than a brand, it's a mindset.<br>
-          Here, you're never alone.<br>
-          You've got a brother.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section text-white py-5">
+    <div class="container position-relative">
+      <div class="gradient-bg"></div>
+      <div class="content text-center">
+        <h2 class="fw-bold">
+          Welcome to <span class="text-gradient">BroYouNeed</span>
+        </h2>
+        <p class="lead mt-3">
+          your digital brother, guide, and support system for when life, work, or ideas get overwhelming.
+        </p>
+        <h4 class="fw-bold mt-4">
+          We started <span class="text-gradient">BroYouNeed</span> with one simple belief:
+        </h4>
+        <h5 class="fw-bold">
+          Everyone deserves someone they can count on.
+        </h5>
+        <p class="mt-4">
+          Whether you're stuck on a big decision, launching a startup, or just need honest advice — 
+          we’re here like the brother you never had. No judgment. <br>
+          Just clarity, guidance, and real talk.
+        </p>
+        <a href="mentors.html" class="btn btn-primary about-btn mt-4 px-4 py-2">MEET MENTORS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content login-card p-4 rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn w-100 about-btn">Login</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</section>
-<section class="about-section text-white py-5">
-  <div class="container position-relative">
-    <!-- Background gradient shape -->
-    <div class="gradient-bg"></div>
 
-    <div class="content text-center">
-      <h2 class="fw-bold">
-        Welcome to <span class="text-gradient">BroYouNeed</span>
-      </h2>
-      <p class="lead mt-3">
-        your digital brother, guide, and support system for when life, work, or ideas get overwhelming.
-      </p>
-
-      <h4 class="fw-bold mt-4">
-        We started <span class="text-gradient">BroYouNeed</span> with one simple belief:
-      </h4>
-      <h5 class="fw-bold">
-        Everyone deserves someone they can count on.
-      </h5>
-
-      <p class="mt-4">
-        Whether you're stuck on a big decision, launching a startup, or just need honest advice — 
-        we’re here like the brother you never had. No judgment. <br>
-        Just clarity, guidance, and real talk.
-      </p>
-
-      <a href="#" class="btn btn-primary about-btn mt-4 px-4 py-2">MEET MENTORS</a>
-    </div>
-  </div>
-</section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
